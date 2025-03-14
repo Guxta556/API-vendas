@@ -1,0 +1,21 @@
+-- Criação do banco de dados
+CREATE DATABASE IF NOT EXISTS estoque_vendas;
+USE estoque_vendas;
+
+-- Criação da tabela produtos
+CREATE TABLE IF NOT EXISTS produtos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    quantidade INT NOT NULL,
+    valor DECIMAL(10, 2) NOT NULL,
+    descricao TEXT
+);
+
+-- Inserir alguns dados iniciais
+INSERT INTO produtos (nome, quantidade, valor, descricao) VALUES
+('Produto A', 10, 100.00, 'Descrição do Produto A'),
+('Produto B', 20, 50.00, 'Descrição do Produto B'),
+('Produto C', 5, 300.00, 'Descrição do Produto C');
+
+-- Verificação se os dados foram inseridos corretamente
+SELECT * FROM produtos;
